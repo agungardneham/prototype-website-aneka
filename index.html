@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Industrial Knowledge Marvels</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0056b3",
+              secondary: "#ff6b35",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, #0056b3 0%, #003366 100%);
+      }
+      .nav-shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .transition-all {
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white nav-shadow fixed w-full z-10">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <img
+            src="http://static.photos/industry/120x60/1"
+            alt="Logo"
+            class="h-12"
+          />
+          <span class="ml-3 text-xl font-bold text-primary"
+            >Direktorat Industri Aneka</span
+          >
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#"
+            class="text-primary font-medium hover:text-secondary transition-all"
+            >Beranda</a
+          >
+          <a href="#" class="text-gray-600 hover:text-primary transition-all"
+            >Tentang</a
+          >
+          <a href="#" class="text-gray-600 hover:text-primary transition-all"
+            >Berita</a
+          >
+          <a href="#" class="text-gray-600 hover:text-primary transition-all"
+            >Kontak</a
+          >
+        </div>
+        <div class="md:hidden">
+          <i data-feather="menu"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Direktorat Industri Aneka
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          Direktorat Jenderal Industri Kecil, Menengah, dan Aneka
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button
+            class="bg-secondary hover:bg-opacity-90 text-white font-semibold py-3 px-8 rounded-lg transition-all"
+          >
+            Explore Services
+          </button>
+          <button
+            class="bg-white hover:bg-gray-100 text-primary font-semibold py-3 px-8 rounded-lg transition-all"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+      <div class="text-center mb-12">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-wide"
+        >
+          Data Industri Aneka
+        </h2>
+        <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div class="p-6 rounded-lg shadow-md">
+            <div class="text-4xl font-bold text-primary mb-2">1,250+</div>
+            <div class="text-gray-600">Industrial Partners</div>
+          </div>
+          <div class="p-6 rounded-lg shadow-md">
+            <div class="text-4xl font-bold text-primary mb-2">5,000+</div>
+            <div class="text-gray-600">Knowledge Resources</div>
+          </div>
+          <div class="p-6 rounded-lg shadow-md">
+            <div class="text-4xl font-bold text-primary mb-2">200+</div>
+            <div class="text-gray-600">Training Programs</div>
+          </div>
+          <div class="p-6 rounded-lg shadow-md">
+            <div class="text-4xl font-bold text-primary mb-2">15+</div>
+            <div class="text-gray-600">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Berita-->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center mb-12"
+        >
+          <!-- Judul Berita di Tengah -->
+          <div class="flex-1 text-center">
+            <h2
+              class="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-wide"
+            >
+              Berita
+            </h2>
+            <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+          </div>
+
+          <!-- Tombol View All di Kanan -->
+          <div class="mt-6 md:mt-0 md:ml-8">
+            <button class="text-primary font-medium flex items-center">
+              View All <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid Berita -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- News Card 1 -->
+          <div
+            class="border rounded-lg overflow-hidden transition-all card-hover"
+          >
+            <img
+              src="http://static.photos/technology/640x360/4"
+              alt="News 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="text-sm text-gray-500 mb-2">June 15, 2023</div>
+              <h3 class="text-xl font-bold mb-3">
+                New Industrial Standards Announced
+              </h3>
+              <p class="text-gray-600 mb-4">
+                The latest updates to industrial production standards will be
+                implemented next quarter.
+              </p>
+              <button class="text-primary font-medium flex items-center">
+                Read More
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- News Card 2 -->
+          <div
+            class="border rounded-lg overflow-hidden transition-all card-hover"
+          >
+            <img
+              src="http://static.photos/workspace/640x360/5"
+              alt="News 2"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="text-sm text-gray-500 mb-2">June 10, 2023</div>
+              <h3 class="text-xl font-bold mb-3">Annual Industry Conference</h3>
+              <p class="text-gray-600 mb-4">
+                Registration is now open for the premier industrial knowledge
+                sharing event.
+              </p>
+              <button class="text-primary font-medium flex items-center">
+                Read More
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- News Card 3 -->
+          <div
+            class="border rounded-lg overflow-hidden transition-all card-hover"
+          >
+            <img
+              src="http://static.photos/industry/640x360/6"
+              alt="News 3"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="text-sm text-gray-500 mb-2">June 5, 2023</div>
+              <h3 class="text-xl font-bold mb-3">
+                Sustainability Initiative Launched
+              </h3>
+              <p class="text-gray-600 mb-4">
+                New program aims to reduce industrial carbon footprint by 30% in
+                five years.
+              </p>
+              <button class="text-primary font-medium flex items-center">
+                Read More
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Our Partners
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="flex justify-center items-center">
+            <img
+              src="http://static.photos/logo/200x100/1"
+              alt="Partner 1"
+              class="h-16 object-contain grayscale hover:grayscale-0 transition-all"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="http://static.photos/logo/200x100/2"
+              alt="Partner 2"
+              class="h-16 object-contain grayscale hover:grayscale-0 transition-all"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="http://static.photos/logo/200x100/3"
+              alt="Partner 3"
+              class="h-16 object-contain grayscale hover:grayscale-0 transition-all"
+            />
+          </div>
+          <div class="flex justify-center items-center">
+            <img
+              src="http://static.photos/logo/200x100/4"
+              alt="Partner 4"
+              class="h-16 object-contain grayscale hover:grayscale-0 transition-all"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Direktorat Industri Aneka</h3>
+            <!-- <p class="text-gray-400">
+              Empowering industries through knowledge sharing and technological
+              advancement.
+            </p> -->
+            <div class="flex space-x-4 mt-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="facebook"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <!-- <h4 class="font-bold mb-4">Quick Links</h4> -->
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-all"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-all"
+                  >Tentang</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-all"
+                  >Berita</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-all"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-start">
+                <i
+                  data-feather="map-pin"
+                  class="mr-2 w-5 h-5 flex-shrink-0 mt-0.5"
+                ></i>
+                <span>
+                  Jl. Gatot Subroto No.Kav. 52-53, RT.1/RW.4, Kuningan Tim.,
+                  Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus
+                  Ibukota Jakarta 12950
+                </span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="phone" class="mr-2 w-4 h-4 flex-shrink-0"></i>
+                <span>(021) 5255509</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="mail" class="mr-2 w-4 h-4 flex-shrink-0"></i>
+                <span>subditaneka@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>© 2025 Direktorat Industri Aneka.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      feather.replace();
+
+      // Mobile menu toggle functionality would go here
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle would be implemented here
+      });
+    </script>
+  </body>
+</html>
