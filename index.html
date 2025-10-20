@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Industrial Knowledge Marvels</title>
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <title>Direktorat Industri Aneka</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/logo-aneka-removebg-preview.png"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -44,12 +48,8 @@
       <div
         class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
-        <div class="flex items-center">
-          <img
-            src="http://static.photos/industry/120x60/1"
-            alt="Logo"
-            class="h-12"
-          />
+        <div class="flex items-center cursor-pointer" href="#home">
+          <img src="/assets/logo-aneka.jpg" alt="Logo" class="h-12" />
           <span class="ml-3 text-xl font-bold text-primary"
             >Direktorat Industri Aneka</span
           >
@@ -85,7 +85,10 @@
         <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
           Direktorat Jenderal Industri Kecil, Menengah, dan Aneka
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          Kementerian Perindustrian Republik Indonesia
+        </p>
+        <!-- <div class="flex flex-col sm:flex-row justify-center gap-4">
           <button
             class="bg-secondary hover:bg-opacity-90 text-white font-semibold py-3 px-8 rounded-lg transition-all"
           >
@@ -96,7 +99,7 @@
           >
             Learn More
           </button>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -234,39 +237,51 @@
       </div>
     </section>
 
-    <!-- Partners Section -->
-    <section class="py-16 bg-gray-50">
+    <!-- Program Kegiatan -->
+    <!-- <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
-          Our Partners
+          Program Kegiatan
         </h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div class="flex justify-center items-center">
             <img
-              src="http://static.photos/logo/200x100/1"
-              alt="Partner 1"
-              class="h-16 object-contain grayscale hover:grayscale-0 transition-all"
+              src="/assets/restruk.png"
+              alt="Restrukturisasi Mesin"
+              class="h-16 object-contain grayscale hover:grayscale-0 transition-all cursor-pointer"
             />
           </div>
           <div class="flex justify-center items-center">
             <img
-              src="http://static.photos/logo/200x100/2"
-              alt="Partner 2"
-              class="h-16 object-contain grayscale hover:grayscale-0 transition-all"
+              src="/assets/bbi.png"
+              alt="Bangga Buatan Indonesia"
+              class="h-16 object-contain grayscale hover:grayscale-0 transition-all cursor-pointer"
+            />
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- Program Kegiatan -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Program Kegiatan
+        </h2>
+
+        <!-- Gunakan flex agar dua logo otomatis berada di tengah -->
+        <div class="flex flex-wrap justify-center items-center gap-12">
+          <div class="flex justify-center items-center">
+            <img
+              src="/assets/restruk.png"
+              alt="Restrukturisasi Mesin"
+              class="h-20 object-contain grayscale hover:grayscale-0 transition-all cursor-pointer"
             />
           </div>
           <div class="flex justify-center items-center">
             <img
-              src="http://static.photos/logo/200x100/3"
-              alt="Partner 3"
-              class="h-16 object-contain grayscale hover:grayscale-0 transition-all"
-            />
-          </div>
-          <div class="flex justify-center items-center">
-            <img
-              src="http://static.photos/logo/200x100/4"
-              alt="Partner 4"
-              class="h-16 object-contain grayscale hover:grayscale-0 transition-all"
+              src="/assets/bbi.png"
+              alt="Bangga Buatan Indonesia"
+              class="h-20 object-contain grayscale hover:grayscale-0 transition-all cursor-pointer"
             />
           </div>
         </div>
@@ -274,91 +289,107 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="bg-gray-900 text-gray-300">
+      <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <!-- Kolom 1: Identitas -->
           <div>
-            <h3 class="text-xl font-bold mb-4">Direktorat Industri Aneka</h3>
-            <!-- <p class="text-gray-400">
-              Empowering industries through knowledge sharing and technological
-              advancement.
-            </p> -->
-            <div class="flex space-x-4 mt-4">
+            <h3 class="text-xl font-bold text-white mb-4">
+              Direktorat Industri Aneka
+            </h3>
+            <p class="text-sm leading-relaxed">
+              Direktorat Jenderal Industri Kecil, Menengah, dan Aneka
+            </p>
+            <p class="py-6">Kementerian Perindustrian Republik Indonesia</p>
+            <div class="flex space-x-4 mt-5">
               <a href="#" class="text-gray-400 hover:text-white transition-all">
-                <i data-feather="facebook"></i>
+                <i data-feather="facebook" class="w-5 h-5"></i>
               </a>
               <a href="#" class="text-gray-400 hover:text-white transition-all">
-                <i data-feather="twitter"></i>
+                <i data-feather="twitter" class="w-5 h-5"></i>
               </a>
               <a href="#" class="text-gray-400 hover:text-white transition-all">
-                <i data-feather="linkedin"></i>
+                <i data-feather="linkedin" class="w-5 h-5"></i>
               </a>
               <a href="#" class="text-gray-400 hover:text-white transition-all">
-                <i data-feather="youtube"></i>
+                <i data-feather="youtube" class="w-5 h-5"></i>
               </a>
             </div>
           </div>
+
+          <!-- Kolom 2: Navigasi -->
           <div>
-            <!-- <h4 class="font-bold mb-4">Quick Links</h4> -->
+            <h4 class="text-lg font-semibold text-white mb-4">Tautan</h4>
             <ul class="space-y-2">
               <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-all"
-                  >Beranda</a
+                <a href="#" class="hover:text-white transition-all">Beranda</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-all"
+                  >Tentang Kami</a
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-all"
-                  >Tentang</a
+                <a href="#" class="hover:text-white transition-all">Berita</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-all">Kontak</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Layanan Terkait -->
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Layanan</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-white transition-all">Data IKM</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-all"
+                  >Fasilitasi Pembinaan</a
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-all"
-                  >Berita</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition-all"
-                  >Kontak</a
+                <a href="#" class="hover:text-white transition-all"
+                  >Program dan Kegiatan</a
                 >
               </li>
             </ul>
           </div>
+
+          <!-- Kolom 4: Kontak -->
           <div>
-            <ul class="space-y-2 text-gray-400">
+            <h4 class="text-lg font-semibold text-white mb-4">Kontak Kami</h4>
+            <ul class="space-y-3">
               <li class="flex items-start">
                 <i
                   data-feather="map-pin"
-                  class="mr-2 w-5 h-5 flex-shrink-0 mt-0.5"
+                  class="w-5 h-5 mr-3 mt-1 flex-shrink-0"
                 ></i>
-                <span>
-                  Jl. Gatot Subroto No.Kav. 52-53, RT.1/RW.4, Kuningan Tim.,
-                  Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus
-                  Ibukota Jakarta 12950
+                <span class="text-sm leading-relaxed">
+                  Gedung Kementerian Perindustrian Lt. 16<br />
+                  Jl. Gatot Subroto No.Kav. 52–53, Kuningan Timur,<br />
+                  Setiabudi, Jakarta Selatan 12950
                 </span>
               </li>
               <li class="flex items-center">
-                <i data-feather="phone" class="mr-2 w-4 h-4 flex-shrink-0"></i>
+                <i data-feather="phone" class="w-4 h-4 mr-3 flex-shrink-0"></i>
                 <span>(021) 5255509</span>
               </li>
               <li class="flex items-center">
-                <i data-feather="mail" class="mr-2 w-4 h-4 flex-shrink-0"></i>
+                <i data-feather="mail" class="w-4 h-4 mr-3 flex-shrink-0"></i>
                 <span>subditaneka@gmail.com</span>
               </li>
             </ul>
           </div>
         </div>
+
+        <!-- Garis Bawah -->
         <div
-          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+          class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400"
         >
-          <p>© 2025 Direktorat Industri Aneka.</p>
+          <p>Direktorat Industri Aneka ©2025. Hak cipta dilindungi.</p>
         </div>
       </div>
     </footer>
