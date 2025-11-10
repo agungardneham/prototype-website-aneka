@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang - Direktorat Industri Aneka</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/logo-aneka-removebg-preview.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0056b3",
+              secondary: "#ff6b35",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, #0056b3 0%, #003366 100%);
+      }
+      .nav-shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .transition-all {
+        transition: all 0.3s ease;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #0056b3;
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px #e5e7eb;
+      }
+      .org-card {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white nav-shadow fixed w-full z-10">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center cursor-pointer" href="#home">
+          <img src="/assets/logo-aneka.jpg" alt="Logo" class="h-12" />
+          <span class="ml-3 text-xl font-bold text-primary"
+            >Direktorat Industri Aneka</span
+          >
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="index.html"
+            class="text-gray-600 hover:text-primary transition-all"
+            >Beranda</a
+          >
+          <a
+            href="#"
+            class="text-primary font-medium hover:text-secondary transition-all"
+            >Tentang</a
+          >
+          <a href="#" class="text-gray-600 hover:text-primary transition-all"
+            >Berita</a
+          >
+          <a href="#" class="text-gray-600 hover:text-primary transition-all"
+            >Kontak</a
+          >
+        </div>
+        <div class="md:hidden">
+          <i data-feather="menu"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Tentang Kami</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          Mengenal Lebih Dekat Direktorat Industri Aneka
+        </p>
+      </div>
+    </section>
+
+    <!-- Sejarah Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-wide"
+          >
+            Sejarah
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gray-50 rounded-lg p-8 shadow-md mb-8">
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Direktorat Industri Aneka merupakan salah satu unit eselon II di
+              bawah Direktorat Jenderal Industri Kecil, Menengah, dan Aneka
+              (IKMA), Kementerian Perindustrian Republik Indonesia. Direktorat
+              ini dibentuk sebagai bagian dari upaya pemerintah dalam
+              mengembangkan sektor industri yang beragam di Indonesia.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Seiring dengan perkembangan industri nasional, Direktorat Industri
+              Aneka terus bertransformasi untuk menjawab tantangan global dan
+              mendukung pertumbuhan industri yang berkelanjutan. Fokus utama
+              direktorat ini adalah pada pengembangan industri yang mencakup
+              berbagai sektor seperti industri mainan, alat olahraga, perhiasan,
+              alat musik, dan lainnya
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              Direktorat Industri Aneka telah berkontribusi signifikan dalam
+              meningkatkan daya saing produk Indonesia di pasar domestik maupun
+              internasional melalui berbagai program pembinaan, fasilitasi, dan
+              pengembangan kapasitas pelaku industri.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Struktur Organisasi -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-wide"
+          >
+            Struktur Organisasi
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+          <!-- Direktur -->
+          <div class="flex justify-center mb-8">
+            <div class="org-card rounded-lg p-6 shadow-md text-center w-80">
+              <div
+                class="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
+              >
+                <img
+                  src="/assets/direktur-aneka.jpeg"
+                  alt="Direktur"
+                  class="w-16 h-16 rounded-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Direktur Industri Aneka
+              </h3>
+              <p class="text-sm text-gray-600">Reny Meilany</p>
+            </div>
+          </div>
+
+          <!-- Subdirektorat - Semua Sejajar -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div
+              class="org-card rounded-lg p-6 shadow-md text-center transition-all card-hover"
+            >
+              <div
+                class="w-12 h-12 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center"
+              >
+                <img
+                  src="/assets/tu-aneka.jpeg"
+                  alt="TU Aneka"
+                  class="w-16 h-16 rounded-full object-cover"
+                />
+              </div>
+              <h4 class="font-bold text-gray-800 mb-2 text-sm">
+                Subbagian Tata Usaha
+              </h4>
+              <p class="text-sm text-gray-600">M. Dinul Kholis</p>
+            </div>
+
+            <div
+              class="org-card rounded-lg p-6 shadow-md text-center transition-all card-hover"
+            >
+              <div
+                class="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center"
+              >
+                <img
+                  src="/assets/tim-program.jpeg"
+                  alt="Tim Program"
+                  class="w-16 h-auto rounded-full object-cover"
+                />
+              </div>
+              <h4 class="font-bold text-gray-800 mb-2 text-sm">
+                Tim Kerja Program, Evaluasi, dan Pelaporan
+              </h4>
+              <p class="text-sm text-gray-600">Eko Prasetyo</p>
+            </div>
+
+            <div
+              class="org-card rounded-lg p-6 shadow-md text-center transition-all card-hover"
+            >
+              <div
+                class="w-12 h-12 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center"
+              >
+                <img
+                  src="/assets/tim-perhiasan.jpeg"
+                  alt="Tim Perhiasan"
+                  class="w-16 h-16 rounded-full object-cover"
+                />
+              </div>
+              <h4 class="font-bold text-gray-800 mb-2 text-sm">
+                Tim Kerja Industri Perhiasan dan Alat Musik
+              </h4>
+              <p class="text-sm text-gray-600">Lia Puji Lestari</p>
+            </div>
+
+            <div
+              class="org-card rounded-lg p-6 shadow-md text-center transition-all card-hover"
+            >
+              <div
+                class="w-12 h-12 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center"
+              >
+                <i data-feather="activity" class="text-white w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-gray-800 mb-2 text-sm">
+                Tim Kerja Industri Mainan dan Alat Olahraga
+              </h4>
+              <p class="text-sm text-gray-600">F. X. David Ardiyanto</p>
+            </div>
+
+            <div
+              class="org-card rounded-lg p-6 shadow-md text-center transition-all card-hover"
+            >
+              <div
+                class="w-12 h-12 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center"
+              >
+                <i data-feather="grid" class="text-white w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-gray-800 mb-2 text-sm">
+                Tim Kerja Industri Aneka Lainnya
+              </h4>
+              <p class="text-sm text-gray-600">Pradana Puche W.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tugas dan Fungsi -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-wide"
+          >
+            Tugas dan Fungsi
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-primary text-white rounded-lg p-8 shadow-lg mb-8">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+              <i data-feather="target" class="mr-3"></i>
+              Tugas Pokok
+            </h3>
+            <p class="leading-relaxed text-lg">
+              Direktorat Industri Aneka mempunyai tugas melaksanakan perumusan
+              dan pelaksanaan kebijakan di bidang rencana pemanfaatan sumber
+              daya alam bagi industri, penyediaan bahan baku dan/atau bahan
+              penolong industri, pembinaan optimalisasi pemanfaatan teknologi
+              industri, perencanaan dan pembinaan standardisasi industri,
+              pembinaan industri hijau dan industri strategis, pembinaan
+              peningkatan penggunaan produk dalam negeri, peningkatan dan
+              penguatan industri 4.0, pembinaan jasa industri, perizinan
+              berusaha, penanaman modal, fasilitas sektor industri, dan promosi,
+              serta pengawasan dan pengendalian kegiatan usaha industri pada
+              industri aneka, pembangunan dan pemberdayaan potensi industri
+              kecil dan industri menengah, sentra industri kecil dan industri
+              menengah dan unit pelayanan teknis, pembinaan dan pengembangan
+              tenaga penyuluh lapangan, konsultan industri kecil dan industri
+              menengah, penumbuhan wirausaha baru, bantuan teknis dan akses
+              pembiayaan, keterkaitan dan hubungan kemitraan pada industri kecil
+              dan industri menengah aneka.
+            </p>
+          </div>
+ <div class="max-w-4xl mx-auto">
+          <div class="bg-white text-black rounded-lg p-8 shadow-lg mb-8">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+              <i data-feather="target" class="mr-3"></i>
+              Fungsi
+            </h3>
+            <p class="leading-relaxed text-lg">
+              Penyusunan rencana, program, dan anggaran, serta pengumpulan data dan informasi pengembangan industri aneka.
+            </p>
+          </div>
+          
+        </div>
+         <div class="max-w-4xl mx-auto">
+          <div class="bg-white text-black rounded-lg p-8 shadow-lg mb-8">
+            <p class="leading-relaxed text-lg"> Penyiapan perumusan kebijakan di bidang rencana pemanfaatan sumber daya alam bagi industri, penyediaan bahan baku dan/atau bahan penolong industri, pembinaan optimalisasi pemanfaatan teknologi industri, perencanaan dan pembinaan standardisasi industri, pembinaan industri hijau dan industri strategis, pembinaan peningkatan penggunaan produk dalam negeri, peningkatan dan penguatan industri 4.0, pembinaan jasa industri, perizinan berusaha, penanaman modal, fasilitas sektor industri, dan promosi, serta pengawasan dan pengendalian kegiatan usaha industri pada industri aneka, pembangunan dan pemberdayaan potensi industri kecil dan industri menengah, sentra industri kecil dan industri menengah dan unit pelayanan teknis, pembinaan dan pengembangan tenaga penyuluh lapangan, konsultan industri kecil dan industri menengah, penumbuhan wirausaha baru, bantuan teknis dan akses pembiayaan, keterkaitan dan hubungan kemitraan, dan fasilitas lainnya pada industri kecil dan industri menengah aneka;
+            </p>
+          </div>
+          
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white text-black rounded-lg p-8 shadow-lg mb-8">
+            <p class="leading-relaxed text-lg"> Penyiapan pelaksanaan kebijakan di bidang rencana pemanfaatan sumber daya alam bagi industri, penyediaan bahan baku dan/atau bahan penolong industri, pembinaan optimalisasi pemanfaatan teknologi industri, perencanaan dan pembinaan standardisasi industri, pembinaan industri hijau dan industri strategis, pembinaan peningkatan penggunaan produk dalam negeri, peningkatan dan penguatan industri 4.0, pembinaan jasa industri, perizinan berusaha, penanaman modal, fasilitas sektor industri, dan promosi, serta pengawasan dan pengendalian kegiatan usaha industri pada industri aneka, pembangunan dan pemberdayaan potensi industri kecil dan industri menengah, sentra industri kecil dan industri menengah dan unit pelayanan teknis, pembinaan dan pengembangan tenaga penyuluh lapangan, konsultan industri kecil dan industri menengah, penumbuhan wirausaha baru, bantuan teknis dan akses pembiayaan, keterkaitan dan hubungan kemitraan, dan fasilitas lainnya pada industri kecil dan industri menengah aneka
+            </p>
+          </div>
+          
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white text-black rounded-lg p-8 shadow-lg mb-8">
+            <p class="leading-relaxed text-lg"> Penyiapan penyusunan norma, standar, prosedur, dan kriteria kebijakan di bidang rencana pemanfaatan sumber daya alam bagi industri, penyediaan bahan baku dan/atau bahan penolong industri, data dan informasi industri, pembinaan optimalisasi pemanfaatan teknologi industri, perencanaan dan pembinaan standardisasi industri, pembinaan industri hijau dan industri strategis, pembinaan peningkatan penggunaan produk dalam negeri, peningkatan dan penguatan industri 4.0, pembinaan jasa industri, perizinan berusaha, penanaman modal, fasilitas sektor industri, dan promosi, serta pengawasan dan pengendalian kegiatan usaha industri pada industri aneka, pembangunan dan pemberdayaan potensi industri kecil dan industri menengah, sentra industri kecil dan industri menengah dan unit pelayanan teknis, pembinaan dan pengembangan tenaga penyuluh lapangan, konsultan industri kecil dan industri menengah, penumbuhan wirausaha baru, bantuan teknis dan akses pembiayaan, keterkaitan dan hubungan kemitraan, dan fasilitas lainnya pada industri kecil dan industri menengah aneka
+            </p>
+          </div>
+          
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white text-black rounded-lg p-8 shadow-lg mb-8">
+            <p class="leading-relaxed text-lg"> Pemberian pendampingan dan supervisi di bidang rencana pemanfaatan sumber daya alam bagi industri, penyediaan bahan baku dan/atau bahan penolong industri, data dan informasi industri, pembinaan optimalisasi pemanfaatan teknologi industri, perencanaan dan pembinaan standardisasi industri, pembinaan industri hijau dan industri strategis, pembinaan peningkatan penggunaan produk dalam negeri, peningkatan dan penguatan industri 4.0, pembinaan jasa industri, perizinan berusaha, penanaman modal, fasilitas sektor industri, dan promosi, serta pengawasan dan pengendalian kegiatan usaha industri pada industri aneka, pembangunan dan pemberdayaan potensi industri kecil dan industri menengah, sentra industri kecil dan industri menengah dan unit pelayanan teknis, pembinaan dan pengembangan tenaga penyuluh lapangan, konsultan industri kecil dan industri menengah, penumbuhan wirausaha baru, bantuan teknis dan akses pembiayaan, keterkaitan dan hubungan kemitraan, dan fasilitas lainnya pada industri kecil dan industri menengah aneka
+            </p>
+          </div>
+          
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white text-black rounded-lg p-8 shadow-lg mb-8">
+            <p class="leading-relaxed text-lg"> Pelaksanaan pemantauan, analisis, evaluasi, dan pelaporan di bidang rencana pemanfaatan sumber daya alam bagi industri, penyediaan bahan baku dan/atau bahan penolong industri, data dan informasi industri, pembinaan optimalisasi pemanfaatan teknologi industri, perencanaan dan pembinaan standardisasi industri, pembinaan industri hijau dan industri strategis, pembinaan peningkatan penggunaan produk dalam negeri, peningkatan dan penguatan industri 4.0, pembinaan jasa industri, perizinan berusaha, penanaman modal, fasilitas sektor industri, dan promosi, serta pengawasan dan pengendalian kegiatan usaha industri pada industri aneka, pembangunan dan pemberdayaan potensi industri kecil dan industri menengah, sentra industri kecil dan industri menengah dan unit pelayanan teknis, pembinaan dan pengembangan tenaga penyuluh lapangan, konsultan industri kecil dan industri menengah, penumbuhan wirausaha baru, bantuan teknis dan akses pembiayaan, keterkaitan dan hubungan kemitraan, dan fasilitas lainnya pada industri kecil dan industri menengah aneka
+            </p>
+          </div>
+          
+        </div>
+         <div class="max-w-4xl mx-auto">
+          <div class="bg-white text-black rounded-lg p-8 shadow-lg mb-8">
+            <p class="leading-relaxed text-lg"> Pelaksanaan urusan persuratan, kearsipan, dan rumah tangga, serta manajemen kinerja Direktorat Industri Aneka
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-wide"
+          >
+            Core Values BerAKHLAK
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+          <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Core Values yang menjadi pedoman dalam setiap tindakan dan keputusan
+            kami
+          </p>
+        </div>
+
+        <div
+          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          <div
+            class="bg-white rounded-lg p-8 shadow-md text-center transition-all card-hover"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-primary to-blue-700 rounded-full mx-auto mb-6 flex items-center justify-center"
+            >
+              <i data-feather="users" class="text-white w-10 h-10"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Berorientasi Pelayanan</h3>
+            <p class="text-gray-600 text-sm">
+                Mengutamakan kepuasan dan kebutuhan masyarakat dalam setiap
+                layanan
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-8 shadow-md text-center transition-all card-hover"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-secondary to-orange-600 rounded-full mx-auto mb-6 flex items-center justify-center"
+            >
+              <i data-feather="shield" class="text-white w-10 h-10"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Akuntabel</h3>
+            <p class="text-gray-600 text-sm">
+              Berkomitmen pada kejujuran, transparansi, dan akuntabilitas dalam
+              setiap tindakan
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-8 shadow-md text-center transition-all card-hover"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-green-600 to-green-700 rounded-full mx-auto mb-6 flex items-center justify-center"
+            >
+              <i data-feather="heart" class="text-white w-10 h-10"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Kompeten</h3>
+            <p class="text-gray-600 text-sm">
+                Mengutamakan peningkatan kompetensi dan profesionalisme dalam
+                menjalankan tugas
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-8 shadow-md text-center transition-all card-hover"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full mx-auto mb-6 flex items-center justify-center"
+            >
+              <i data-feather="star" class="text-white w-10 h-10"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Harmonis</h3>
+            <p class="text-gray-600 text-sm">
+                Membangun hubungan yang harmonis dengan rekan kerja dan
+                masyarakat
+            </p>
+          </div>
+        </div>
+
+        <!-- Additional Values -->
+        <div
+          class="max-w-4xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
+          <div
+            class="bg-white rounded-lg p-6 shadow-md text-center transition-all card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <i data-feather="sunrise" class="text-white w-8 h-8"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">
+              Loyal
+            </h3>
+            <p class="text-gray-600 text-sm">
+                Setia dan berdedikasi tinggi terhadap tugas dan tanggung jawab
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-md text-center transition-all card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <i data-feather="compass" class="text-white w-8 h-8"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Adaptif</h3>
+            <p class="text-gray-600 text-sm">
+              Responsif terhadap perubahan dan tantangan industri global
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-lg p-6 shadow-md text-center transition-all card-hover"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center"
+            >
+              <svg class="w-8 h-8" viewBox="0 -8 72 72" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:#FFFFFF;}</style></defs><title>handshake</title><path class="cls-1" d="M64,12.78v17s-3.63.71-4.38.81-3.08.85-4.78-.78C52.22,27.25,42.93,18,42.93,18a3.54,3.54,0,0,0-4.18-.21c-2.36,1.24-5.87,3.07-7.33,3.78a3.37,3.37,0,0,1-5.06-2.64,3.44,3.44,0,0,1,2.1-3c3.33-2,10.36-6,13.29-7.52,1.78-1,3.06-1,5.51,1C50.27,12,53,14.27,53,14.27a2.75,2.75,0,0,0,2.26.43C58.63,14,64,12.78,64,12.78ZM27,41.5a3,3,0,0,0-3.55-4.09,3.07,3.07,0,0,0-.64-3,3.13,3.13,0,0,0-3-.75,3.07,3.07,0,0,0-.65-3,3.38,3.38,0,0,0-4.72.13c-1.38,1.32-2.27,3.72-1,5.14s2.64.55,3.72.3c-.3,1.07-1.2,2.07-.09,3.47s2.64.55,3.72.3c-.3,1.07-1.16,2.16-.1,3.46s2.84.61,4,.25c-.45,1.15-1.41,2.39-.18,3.79s4.08.75,5.47-.58a3.32,3.32,0,0,0,.3-4.68A3.18,3.18,0,0,0,27,41.5Zm25.35-8.82L41.62,22a3.53,3.53,0,0,0-3.77-.68c-1.5.66-3.43,1.56-4.89,2.24a8.15,8.15,0,0,1-3.29,1.1,5.59,5.59,0,0,1-3-10.34C29,12.73,34.09,10,34.09,10a6.46,6.46,0,0,0-5-2C25.67,8,18.51,12.7,18.51,12.7a5.61,5.61,0,0,1-4.93.13L8,10.89v19.4s1.59.46,3,1a6.33,6.33,0,0,1,1.56-2.47,6.17,6.17,0,0,1,8.48-.06,5.4,5.4,0,0,1,1.34,2.37,5.49,5.49,0,0,1,2.29,1.4A5.4,5.4,0,0,1,26,34.94a5.47,5.47,0,0,1,3.71,4,5.38,5.38,0,0,1,2.39,1.43,5.65,5.65,0,0,1,1.48,4.89,0,0,0,0,1,0,0s.8.9,1.29,1.39a2.46,2.46,0,0,0,3.48-3.48s2,2.48,4.28,1c2-1.4,1.69-3.06.74-4a3.19,3.19,0,0,0,4.77.13,2.45,2.45,0,0,0,.13-3.3s1.33,1.81,4,.12c1.89-1.6,1-3.43,0-4.39Z"></path></g></svg>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Kolaboratif</h3>
+            <p class="text-gray-600 text-sm">
+              Membangun kemitraan yang kuat dengan stakeholder untuk mencapai
+              tujuan bersama
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+       <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+      <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Kolom 1: Identitas -->
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">
+              Direktorat Industri Aneka
+            </h3>
+            <p class="text-sm leading-relaxed mb-2">
+              Direktorat Jenderal Industri Kecil, Menengah, dan Aneka
+            </p>
+            <p class="text-sm leading-relaxed mb-6">
+              Kementerian Perindustrian Republik Indonesia
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="facebook" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="twitter" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="linkedin" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="youtube" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kolom 2: Navigasi -->
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Tautan</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="index.html" class="text-sm hover:text-white transition-all"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm hover:text-white transition-all"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm hover:text-white transition-all">Berita</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm hover:text-white transition-all">Kontak</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Kontak -->
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Kontak Kami</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i
+                  data-feather="map-pin"
+                  class="w-5 h-5 mr-3 mt-1 flex-shrink-0"
+                ></i>
+                <span class="text-sm leading-relaxed">
+                  Gedung Kementerian Perindustrian Lt. 16<br />
+                  Jl. Gatot Subroto No.Kav. 52–53, Kuningan Timur,<br />
+                  Setiabudi, Jakarta Selatan 12950
+                </span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="phone" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                <span class="text-sm">(021) 5255509</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="mail" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                <span class="text-sm">subditaneka@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Garis Bawah -->
+        <div
+          class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400"
+        >
+          <p>Direktorat Industri Aneka ©2025. Hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      feather.replace();
+
+      // Mobile menu toggle functionality would go here
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle would be implemented here
+      });
+    </script>
+  </body>
+</html>
