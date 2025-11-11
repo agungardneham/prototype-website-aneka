@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berita - Direktorat Industri Aneka</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/logo-aneka-removebg-preview.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0056b3",
+              secondary: "#ff6b35",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, #0056b3 0%, #003366 100%);
+      }
+      .nav-shadow {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .transition-all {
+        transition: all 0.3s ease;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 50;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+      }
+
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 20px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 800px;
+        max-height: 90vh;
+        overflow-y: auto;
+        animation: slideUp 0.3s ease;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .close-modal {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .close-modal:hover,
+      .close-modal:focus {
+        color: #000;
+      }
+
+      .news-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        background-color: #e3f2fd;
+        color: #0056b3;
+      }
+
+      .category-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .badge-program {
+        background-color: #fff3e0;
+        color: #e65100;
+      }
+
+      .badge-kegiatan {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+      }
+
+      .badge-pengumuman {
+        background-color: #fce4ec;
+        color: #c2185b;
+      }
+
+      .badge-prestasi {
+        background-color: #f3e5f5;
+        color: #7b1fa2;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white nav-shadow fixed w-full z-10">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="cursor-pointer">
+          <a href="index.html" class="flex items-center">
+            <img src="/assets/logo-aneka.jpg" alt="Logo" class="h-12" />
+            <span class="ml-3 text-xl font-bold text-primary">
+              Direktorat Industri Aneka
+            </span>
+          </a>
+        </div>
+
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="index.html"
+            class="text-gray-600 hover:text-primary transition-all"
+            >Beranda</a
+          >
+          <a
+            href="aboutus.html"
+            class="text-gray-600 hover:text-primary transition-all"
+            >Tentang</a
+          >
+          <a
+            href="berita.html"
+            class="text-primary font-medium hover:text-secondary transition-all"
+            >Berita</a
+          >
+        </div>
+        <div class="md:hidden">
+          <i data-feather="menu"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-32 pb-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Berita & Informasi</h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          Update terkini mengenai kegiatan, program, dan pencapaian Direktorat
+          Industri Aneka
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center gap-3">
+          <button
+            class="filter-btn active px-6 py-2 rounded-full font-medium transition-all"
+            data-category="semua"
+          >
+            Semua
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full font-medium transition-all"
+            data-category="program"
+          >
+            Program
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full font-medium transition-all"
+            data-category="kegiatan"
+          >
+            Kegiatan
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full font-medium transition-all"
+            data-category="pengumuman"
+          >
+            Pengumuman
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full font-medium transition-all"
+            data-category="prestasi"
+          >
+            Prestasi
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div
+          id="newsGrid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- News items will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="newsModal" class="modal">
+      <div class="modal-content">
+        <div
+          class="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center"
+        >
+          <h2 id="modalTitle" class="text-2xl font-bold text-gray-800"></h2>
+          <span class="close-modal">&times;</span>
+        </div>
+        <div class="p-6">
+          <div id="modalCategory" class="mb-4"></div>
+          <img
+            id="modalImage"
+            class="w-full h-64 md:h-96 object-cover rounded-lg mb-6"
+            alt="News Image"
+          />
+          <div class="flex items-center text-gray-500 text-sm mb-6">
+            <i data-feather="calendar" class="w-4 h-4 mr-2"></i>
+            <span id="modalDate"></span>
+            <i data-feather="user" class="w-4 h-4 ml-4 mr-2"></i>
+            <span id="modalAuthor"></span>
+          </div>
+          <div
+            id="modalContent"
+            class="prose max-w-none text-gray-700 leading-relaxed"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+      <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Kolom 1: Identitas -->
+          <div>
+            <h3 class="text-xl font-bold text-white mb-4">
+              Direktorat Industri Aneka
+            </h3>
+            <p class="text-sm leading-relaxed mb-2">
+              Direktorat Jenderal Industri Kecil, Menengah, dan Aneka
+            </p>
+            <p class="text-sm leading-relaxed mb-6">
+              Kementerian Perindustrian Republik Indonesia
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="facebook" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="twitter" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="linkedin" class="w-5 h-5"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-all">
+                <i data-feather="youtube" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kolom 2: Navigasi -->
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Tautan</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-sm hover:text-white transition-all"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="tentang.html"
+                  class="text-sm hover:text-white transition-all"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm hover:text-white transition-all"
+                  >Berita</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm hover:text-white transition-all"
+                  >Kontak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Kontak -->
+          <div>
+            <h4 class="text-lg font-semibold text-white mb-4">Kontak Kami</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i
+                  data-feather="map-pin"
+                  class="w-5 h-5 mr-3 mt-1 flex-shrink-0"
+                ></i>
+                <span class="text-sm leading-relaxed">
+                  Gedung Kementerian Perindustrian Lt. 16<br />
+                  Jl. Gatot Subroto No.Kav. 52–53, Kuningan Timur,<br />
+                  Setiabudi, Jakarta Selatan 12950
+                </span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="phone" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                <span class="text-sm">(021) 5255509</span>
+              </li>
+              <li class="flex items-center">
+                <i data-feather="mail" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                <span class="text-sm">subditaneka@gmail.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Garis Bawah -->
+        <div
+          class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400"
+        >
+          <p>Direktorat Industri Aneka ©2025. Hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // News Data
+      const newsData = [
+        {
+          id: 1,
+          title: "Workshop Kebijakan TKDN Bagi Sentra Industri Aneka",
+          category: "program",
+          date: "Bogor, 29 Oktober 2025",
+          author: "Tata Usaha",
+          image: "assets/news-1.png",
+          excerpt:
+            "Bangga menggunakan produk Indonesia! Direktorat Industri Aneka-Kementerian Perindustrian...",
+          content: `
+            <p class="mb-4">Bangga menggunakan produk Indonesia! </p>
+            <p class="mb-4">Direktorat Industri Aneka-Kementerian Perindustrian terus mendorong tumbuhnya industri aneka yang berdaya saing dan berkontribusi bagi perekonomian nasional melalui pelaksanaan Workshop Kebijakan TKDN bagi Sektor Industri Aneka yang diselenggarakan di Kota Bogor pada tanggal 29 Oktober 2025.
+Kegiatan ini dibuka oleh Ibu Reny Meilany, Direktur Industri Aneka, dan dihadiri oleh pembina industri di Kab. Bogor dan Kota Bogor serta para pelaku Industri termasuk IKM di sektor mainan anak dan alat permainan, industri perhiasan, alat musik, alat olahraga, serta industri aneka lainnya.
+Mari bersama kita kuatkan langkah menuju kemandirian industri bangsa!</p>
+          `,
+        },
+        {
+          id: 2,
+          title: "Kegiatan Penguatan Sentra IKM Mainan",
+          category: "kegiatan",
+          date: "Bandung, 11 September 2025",
+          author: "Tim Program & Evalap",
+          image: "assets/news-2.png",
+          excerpt:
+            "Pada tanggal 11–12 September 2025, Direktorat Industri Aneka bersama berbagai pemangku kepentingan telah menyelenggarakan...",
+          content: `
+            <p class="mb-4">Penguatan Sentra IKM Mainan Kabupaten Bandung</p>
+            <p class="mb-4">Pada tanggal 11–12 September 2025, Direktorat Industri Aneka bersama berbagai pemangku kepentingan telah menyelenggarakan Pengembangan Sentra IKM Mainan di Kabupaten Bandung.</p>
+<p class="mb-4">Dalam kesempatan ini menghadirkan beberapa narasumber yaitu:</p>
+<ul class="list-disc pl-6 mb-4">
+<li>Dinas Perindustrian dan Perdagangan Kabupaten Bandung</li>
+<li>Pusat Data dan Informasi Kementerian Perindustrian</li>
+<li>Balai Besar Standardisasi dan Pelayanan Jasa Industri Tekstil (BBSPJIT)</li>
+<ul>
+
+<p class="mb-4">Adapun tujuan kegiatan ini untuk mendorong IKM memiliki legalitas usaha, sekaligus meningkatkan kesadaran akan pentingnya pemenuhan standar SNI agar produk mainan anak lebih aman, berkualitas, dan berdaya saing.</p>
+
+<p class="mb-4">Diikuti oleh 30 peserta dari Sentra IKM Kampung Boneka Sayati, Disperindag Kab. Bandung, serta Balai Besar Standardisasi & Pelayanan Jasa Industri.</p>
+          `,
+        },
+        {
+          id: 3,
+          title: "Kegiatan Diseminasi Kebijakan Industri Aneka",
+          category: "kegiatan",
+          date: "Jakarta, 10 September 2025",
+          author: "Tata Usaha",
+          image: "assets/news-3.png",
+          excerpt:
+            "Pada hari Rabu, 10 September 2025, telah terselenggara kegiatan Diseminasi Kebijakan Industri Aneka yang menghadirkan berbagai pemangku kepentingan...",
+          content: `
+            <h3 class="text-xl font-bold mb-3"> Diseminasi Kebijakan Industri Aneka</h3>
+            <p class="mb-4">Halo, Sobat Industri Aneka!</p>
+            <p class="mb-4">Pada hari Rabu, 10 September 2025, telah terselenggara kegiatan Diseminasi Kebijakan Industri Aneka yang menghadirkan berbagai pemangku kepentingan, mulai dari internal Kementerian Perindustrian, asosiasi, hingga para pelaku usaha industri.</p>
+            <p class="mb-4">Dalam kesempatan ini, narasumber yang berasal dari Kemeninves dan Hilirisasi/BKPM, BRIN, dan Ditjen Pajak Kemenkeu masing-masing menyampaikan pemaparan materi mengenai:</p>
+            <ul class="list-disc pl-6 mb-4">
+              <li>Insentif Investment Allowance bagi Pelaku Usaha di Sektor Industri Aneka</li>
+              <li>Insentif Super Tax Deduction Litbang bagi Pelaku Usaha di Sektor Industri Aneka</li>
+              <li>Tata Cara Perhitungan Super Tax Deduction Litbang</li>
+            </ul>
+            <p class="mb-4">Melalui kegiatan ini, diharapkan para pelaku usaha industri dapat semakin memahami kebijakan yang dapat mendukung peningkatan nilai investasi Industri Aneka di Indonesia.</p>
+            <p class="mb-4">Mari bersama kita dorong kemajuan Industri Aneka agar semakin berdaya saing dan memberi kontribusi nyata bagi perekonomian nasional!</p>
+          `,
+        },
+        {
+          id: 4,
+          title: "Indonesia Sports Synergy Summit (ISSS) 2025",
+          category: "program",
+          date: "Jakarta, 5 September 2025",
+          author: "Tim Program",
+          image: "assets/news-4.png",
+          excerpt:
+            "Pada 5-7 September 2025, telah terselenggara Pameran Indonesia Sports Synergy Summit (ISSS) 2025 kerja sama Kementerian Perindustrian...",
+          content: `
+            <p class="mb-4">Halo, Sobat Industri Aneka!</p>
+            <p class="mb-4">Pada 5-7 September 2025, telah terselenggara Pameran Indonesia Sports Synergy Summit (ISSS) 2025 kerja sama Kementerian Perindustrian dengan Komite Olahraga Nasional Indonesia yang bertempat di Lower Lobby - Jakarta International Convention Center (JICC). ISSS 2025 diselenggarakan oleh Komite Olahraga Nasional Indonesia (KONI) dengan tujuan sebagai panggung inovasi industri olahraga nasional dengan menampilkan berbagai produk yang berkaitan dengan keolahragaan, teknologi, layanan, dan promosi. </p>
+            <p class="mb-4">Pelaku industri binaan Direktorat Industri Aneka yang berpartisipasi pada pameran ini adalah:</p>
+            <ul class="list-disc pl-6 mb-4">
+              <li>CV Inovasi Karet Nusantara, Merek: Rugonal - Produk: Rubber</li>
+              <li>PT Inkor Bola Pacific, Merek: Proteam - Produk: Bola Sepak, Bola Futsal, Bola Basket, Bola Volley</li>
+              <li>CV Grindstone Sports, Merek: Grindstone - Produk: Sport Gloves</li>
+              <li>CV Shiamiq Terang Abadi, Merek: Shiamiq - Produk: Meja Tenis Meja</li>
+            </ul>
+          `,
+        },
+        // {
+        //   id: 5,
+        //   title: "Program Pelatihan Digital Marketing untuk IKM",
+        //   category: "program",
+        //   date: "20 Desember 2024",
+        //   author: "Tim Program",
+        //   image: "https://picsum.photos/seed/news5/800/600",
+        //   excerpt:
+        //     "Program pelatihan untuk membekali IKM dengan kemampuan pemasaran digital guna memperluas jangkauan pasar.",
+        //   content: `
+        //     <p class="mb-4">Direktorat Industri Aneka meluncurkan Program Pelatihan Digital Marketing khusus untuk IKM di seluruh Indonesia. Program ini merupakan respons terhadap kebutuhan IKM untuk memperluas pasar melalui platform digital.</p>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Tujuan Program</h3>
+        //     <p class="mb-4">Program ini bertujuan untuk:</p>
+        //     <ul class="list-disc pl-6 mb-4">
+        //       <li>Meningkatkan literasi digital pelaku IKM</li>
+        //       <li>Membekali kemampuan pemasaran melalui media sosial dan marketplace</li>
+        //       <li>Mengoptimalkan strategi penjualan online</li>
+        //       <li>Meningkatkan omzet melalui ekspansi pasar digital</li>
+        //     </ul>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Format Pelatihan</h3>
+        //     <p class="mb-4">Pelatihan dilaksanakan secara hybrid (online dan offline) selama 2 bulan dengan materi:</p>
+        //     <ul class="list-disc pl-6 mb-4">
+        //       <li>Dasar-dasar digital marketing</li>
+        //       <li>Optimasi marketplace (Tokopedia, Shopee, dll)</li>
+        //       <li>Social media marketing (Instagram, Facebook, TikTok)</li>
+        //       <li>Content creation dan fotografi produk</li>
+        //       <li>Digital advertising dan analytics</li>
+        //     </ul>
+
+        //     <p class="mb-4">Pendaftaran gelombang pertama dibuka mulai 1 Januari 2025 dengan kuota 300 peserta untuk wilayah Jawa dan Sumatera.</p>
+        //   `,
+        // },
+        // {
+        //   id: 6,
+        //   title: "Expo Produk IKM Binaan 2024",
+        //   category: "kegiatan",
+        //   date: "15 Desember 2024",
+        //   author: "Tim Event",
+        //   image: "https://picsum.photos/seed/news6/800/600",
+        //   excerpt:
+        //     "Pameran produk IKM binaan menampilkan hasil karya terbaik dari berbagai sektor industri aneka.",
+        //   content: `
+        //     <p class="mb-4">Expo Produk IKM Binaan 2024 sukses diselenggarakan di Jakarta Convention Center dengan menghadirkan lebih dari 150 booth IKM dari berbagai sektor industri aneka. Event ini berlangsung selama 5 hari dan dikunjungi lebih dari 15.000 pengunjung.</p>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Produk Unggulan</h3>
+        //     <p class="mb-4">Expo ini menampilkan berbagai produk unggulan seperti:</p>
+        //     <ul class="list-disc pl-6 mb-4">
+        //       <li>Kerajinan kayu dan furniture inovatif</li>
+        //       <li>Perhiasan dan aksesoris fashion</li>
+        //       <li>Mainan edukatif ramah lingkungan</li>
+        //       <li>Alat musik tradisional modern</li>
+        //       <li>Produk home decor kontemporer</li>
+        //     </ul>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Business Matching</h3>
+        //     <p class="mb-4">Selain pameran, event ini juga menggelar sesi business matching antara IKM dengan pembeli potensial, baik dari dalam maupun luar negeri. Total transaksi yang berhasil dicapai mencapai Rp 8,5 miliar dengan komitmen order senilai Rp 25 miliar.</p>
+
+        //     <p class="mb-4">"Event ini sangat membantu kami mendapatkan buyer baru, terutama dari pasar ekspor," ungkap salah satu peserta expo.</p>
+        //   `,
+        // },
+        // {
+        //   id: 7,
+        //   title: "Perubahan Syarat Pendaftaran Program Bantuan",
+        //   category: "pengumuman",
+        //   date: "10 Desember 2024",
+        //   author: "Admin Direktorat",
+        //   image: "https://picsum.photos/seed/news7/800/600",
+        //   excerpt:
+        //     "Terdapat perubahan persyaratan pendaftaran program bantuan untuk periode 2025.",
+        //   content: `
+        //     <p class="mb-4">Direktorat Industri Aneka mengumumkan adanya pembaruan persyaratan pendaftaran program bantuan untuk periode 2025. Perubahan ini bertujuan untuk memperluas jangkauan program dan mempermudah akses bagi lebih banyak IKM.</p>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Persyaratan Baru</h3>
+        //     <p class="mb-4">Beberapa perubahan penting yang perlu diperhatikan:</p>
+        //     <ul class="list-disc pl-6 mb-4">
+        //       <li>Minimal lama usaha dikurangi dari 3 tahun menjadi 1 tahun</li>
+        //       <li>Persyaratan omzet tahunan disesuaikan dengan sektor industri</li>
+        //       <li>Tidak lagi wajib memiliki NPWP bagi usaha mikro</li>
+        //       <li>Penambahan kategori IKM pemula</li>
+        //       <li>Fleksibilitas dokumen legalitas usaha</li>
+        //     </ul>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Dokumen yang Diperlukan</h3>
+        //     <p class="mb-4">Dokumen yang perlu disiapkan untuk pendaftaran:</p>
+        //     <ul class="list-disc pl-6 mb-4">
+        //       <li>KTP dan Kartu Keluarga</li>
+        //       <li>Surat Keterangan Usaha dari Kelurahan</li>
+        //       <li>Foto usaha dan produk</li>
+        //       <li>Proposal rencana penggunaan bantuan</li>
+        //       <li>Surat pernyataan kesediaan mengikuti program pembinaan</li>
+        //     </ul>
+
+        //     <p class="mb-4">Informasi lengkap dan formulir pendaftaran dapat diakses melalui portal resmi kami mulai 1 Januari 2025.</p>
+        //   `,
+        // },
+        // {
+        //   id: 8,
+        //   title: "IKM Mainan Edukatif Tembus Pasar Eropa",
+        //   category: "prestasi",
+        //   date: "5 Desember 2024",
+        //   author: "Tim Komunikasi",
+        //   image: "https://picsum.photos/seed/news8/800/600",
+        //   excerpt:
+        //     "IKM mainan edukatif berhasil mengekspor produknya ke beberapa negara Eropa setelah mendapat pembinaan intensif.",
+        //   content: `
+        //     <p class="mb-4">PT Mainan Cerdas Indonesia, IKM binaan Direktorat Industri Aneka, berhasil menembus pasar Eropa dengan mengekspor mainan edukatif ramah lingkungan ke Jerman, Belanda, dan Denmark dengan nilai transaksi mencapai USD 500,000.</p>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Produk Unggulan</h3>
+        //     <p class="mb-4">Produk yang diekspor merupakan mainan edukatif berbahan dasar kayu yang telah tersertifikasi internasional. Produk ini dirancang untuk mengembangkan kemampuan motorik dan kognitif anak-anak usia 2-6 tahun.</p>
+
+        //     <p class="mb-4">Keunggulan produk meliputi:</p>
+        //     <ul class="list-disc pl-6 mb-4">
+        //       <li>100% bahan alami dan ramah lingkungan</li>
+        //       <li>Desain yang aman untuk anak-anak</li>
+        //       <li>Nilai edukatif tinggi berdasarkan riset perkembangan anak</li>
+        //       <li>Sertifikasi CE dan EN71 untuk pasar Eropa</li>
+        //     </ul>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Perjalanan Menuju Ekspor</h3>
+        //     <p class="mb-4">Kesuksesan ini tidak terlepas dari program pembinaan yang diberikan Direktorat, meliputi:</p>
+        //     <ul class="list-disc pl-6 mb-4">
+        //       <li>Pendampingan sertifikasi produk internasional</li>
+        //       <li>Pelatihan standar kualitas ekspor</li>
+        //       <li>Fasilitasi pameran internasional</li>
+        //       <li>Bantuan penerjemahan dokumen dan kontrak</li>
+        //       <li>Networking dengan buyer internasional</li>
+        //     </ul>
+
+        //     <p class="mb-4">"Kami sangat berterima kasih atas dukungan Direktorat. Pencapaian ini membuktikan bahwa produk IKM Indonesia berkualitas dan bisa bersaing di pasar global," ujar Direktur PT Mainan Cerdas Indonesia.</p>
+        //   `,
+        // },
+        // {
+        //   id: 9,
+        //   title: "Kunjungan Industri ke Sentra Kerajinan Bali",
+        //   category: "kegiatan",
+        //   date: "1 Desember 2024",
+        //   author: "Tim Program",
+        //   image: "https://picsum.photos/seed/news9/800/600",
+        //   excerpt:
+        //     "Direktorat mengadakan kunjungan ke sentra kerajinan di Bali untuk monitoring dan evaluasi program pembinaan.",
+        //   content: `
+        //     <p class="mb-4">Tim Direktorat Industri Aneka melakukan kunjungan kerja ke sentra kerajinan perak dan ukir kayu di Bali untuk memonitor perkembangan IKM binaan serta mengevaluasi efektivitas program yang telah berjalan.</p>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Agenda Kunjungan</h3>
+        //     <p class="mb-4">Selama 3 hari, tim melakukan berbagai kegiatan:</p>
+        //     <ul class="list-disc pl-6 mb-4">
+        //       <li>Kunjungan ke 25 IKM binaan di Gianyar dan Celuk</li>
+        //       <li>Focus Group Discussion dengan pengrajin</li>
+        //       <li>Evaluasi penggunaan bantuan mesin dan peralatan</li>
+        //       <li>Identifikasi permasalahan dan kebutuhan IKM</li>
+        //       <li>Sosialisasi program 2025</li>
+        //     </ul>
+
+        //     <h3 class="text-xl font-bold mb-3 mt-6">Temuan dan Tindak Lanjut</h3>
+        //     <p class="mb-4">Dari kunjungan ini ditemukan beberapa hal penting:</p>
+        //     <ul class="list-disc pl-6 mb-4">
+        //       <li>Produktivitas IKM binaan meningkat rata-rata 35%</li>
+        //       <li>Perlu pendampingan lebih intensif untuk digital marketing</li>
+        //       <li>Akses bahan baku menjadi tantangan utama</li>
+        //       <li>Permintaan pelatihan design thinking meningkat</li>
+        //     </ul>
+
+        //     <p class="mb-4">Berdasarkan masukan dari pengrajin, Direktorat akan menyusun program khusus untuk mengatasi tantangan yang dihadapi, termasuk kemungkinan pembentukan koperasi bahan baku dan pelatihan digital marketing intensif.</p>
+        //   `,
+        // },
+      ];
+
+      // Filter functionality
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const newsGrid = document.getElementById("newsGrid");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => {
+            b.classList.remove("active", "bg-primary", "text-white");
+            b.classList.add("bg-gray-200", "text-gray-700");
+          });
+          btn.classList.add("active", "bg-primary", "text-white");
+          btn.classList.remove("bg-gray-200", "text-gray-700");
+
+          const category = btn.dataset.category;
+          renderNews(category);
+        });
+      });
+
+      // Set initial active state
+      filterBtns[0].classList.add("bg-primary", "text-white");
+      filterBtns[0].classList.remove("bg-gray-200", "text-gray-700");
+
+      filterBtns.forEach((btn, index) => {
+        if (index !== 0) {
+          btn.classList.add("bg-gray-200", "text-gray-700");
+        }
+      });
+
+      // Render news function
+      function renderNews(category = "semua") {
+        const filteredNews =
+          category === "semua"
+            ? newsData
+            : newsData.filter((news) => news.category === category);
+
+        newsGrid.innerHTML = filteredNews
+          .map(
+            (news) => `
+          <div class="border rounded-lg overflow-hidden transition-all card-hover bg-white cursor-pointer" onclick="openModal(${
+            news.id
+          })">
+            <img
+              src="${news.image}"
+              alt="${news.title}"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="mb-3">
+                <span class="category-badge badge-${
+                  news.category
+                }">${getCategoryName(news.category)}</span>
+              </div>
+              <div class="text-sm text-gray-500 mb-2 flex items-center">
+                <i data-feather="calendar" class="w-4 h-4 mr-1"></i>
+                ${news.date}
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800 hover:text-primary transition-all">
+                ${news.title}
+              </h3>
+              <p class="text-gray-600 mb-4">
+                ${news.excerpt}
+              </p>
+              <button class="text-primary font-medium flex items-center hover:text-secondary transition-all">
+                Baca Selengkapnya
+                <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `
+          )
+          .join("");
+
+        feather.replace();
+      }
+
+      function getCategoryName(category) {
+        const categories = {
+          program: "Program",
+          kegiatan: "Kegiatan",
+          pengumuman: "Pengumuman",
+          prestasi: "Prestasi",
+        };
+        return categories[category] || category;
+      }
+
+      // Modal functionality
+      const modal = document.getElementById("newsModal");
+      const closeBtn = document.querySelector(".close-modal");
+
+      function openModal(newsId) {
+        const news = newsData.find((n) => n.id === newsId);
+        if (!news) return;
+
+        document.getElementById("modalTitle").textContent = news.title;
+        document.getElementById(
+          "modalCategory"
+        ).innerHTML = `<span class="category-badge badge-${
+          news.category
+        }">${getCategoryName(news.category)}</span>`;
+        document.getElementById("modalImage").src = news.image;
+        document.getElementById("modalDate").textContent = news.date;
+        document.getElementById("modalAuthor").textContent = news.author;
+        document.getElementById("modalContent").innerHTML = news.content;
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        feather.replace();
+      }
+
+      closeBtn.onclick = function () {
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.classList.remove("active");
+          document.body.style.overflow = "auto";
+        }
+      };
+
+      // Initial render
+      renderNews();
+      feather.replace();
+    </script>
+  </body>
+</html>
