@@ -153,6 +153,7 @@
       <div
         class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
+        <!-- Logo -->
         <div class="cursor-pointer">
           <a href="index.html" class="flex items-center">
             <img src="/assets/logo-aneka.jpg" alt="Logo" class="h-12" />
@@ -162,10 +163,11 @@
           </a>
         </div>
 
+        <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8">
           <a
             href="index.html"
-            class="text-gray-600 hover:text-primary transition-all"
+            class="text-primary font-medium hover:text-secondary transition-all"
             >Beranda</a
           >
           <a
@@ -175,13 +177,36 @@
           >
           <a
             href="berita.html"
-            class="text-primary font-medium hover:text-secondary transition-all"
+            class="text-gray-600 hover:text-primary transition-all"
             >Berita</a
           >
         </div>
+
+        <!-- Mobile Menu Button -->
         <div class="md:hidden">
-          <i data-feather="menu"></i>
+          <button id="menu-btn" class="focus:outline-none">
+            <i data-feather="menu"></i>
+          </button>
         </div>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a
+          href="index.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+          >Beranda</a
+        >
+        <a
+          href="aboutus.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+          >Tentang</a
+        >
+        <a
+          href="berita.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+          >Berita</a
+        >
       </div>
     </nav>
 
@@ -320,19 +345,16 @@
               </li>
               <li>
                 <a
-                  href="tentang.html"
+                  href="aboutus.html"
                   class="text-sm hover:text-white transition-all"
                   >Tentang Kami</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm hover:text-white transition-all"
+                <a
+                  href="berita.html"
+                  class="text-sm hover:text-white transition-all"
                   >Berita</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-sm hover:text-white transition-all"
-                  >Kontak</a
                 >
               </li>
             </ul>
@@ -752,6 +774,16 @@ Mari bersama kita kuatkan langkah menuju kemandirian industri bangsa!</p>
         }
       };
 
+      // Mobile menu toggle functionality would go here
+
+      feather.replace();
+
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
       // Initial render
       renderNews();
       feather.replace();

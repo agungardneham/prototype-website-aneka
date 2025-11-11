@@ -58,38 +58,65 @@
     </style>
   </head>
   <body class="font-sans bg-gray-50">
-    <!-- Navigation -->
+     <!-- Navigation -->
     <nav class="bg-white nav-shadow fixed w-full z-10">
       <div
         class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
-       <div class="cursor-pointer">
-  <a href="index.html" class="flex items-center">
-    <img src="/assets/logo-aneka.jpg" alt="Logo" class="h-12" />
-    <span class="ml-3 text-xl font-bold text-primary">
-      Direktorat Industri Aneka
-    </span>
-  </a>
-</div>
+        <!-- Logo -->
+        <div class="cursor-pointer">
+          <a href="index.html" class="flex items-center">
+            <img src="/assets/logo-aneka.jpg" alt="Logo" class="h-12" />
+            <span class="ml-3 text-xl font-bold text-primary">
+              Direktorat Industri Aneka
+            </span>
+          </a>
+        </div>
 
+        <!-- Desktop Menu -->
         <div class="hidden md:flex space-x-8">
           <a
             href="index.html"
-            class="text-gray-600 hover:text-primary transition-all"
+            class="text-primary font-medium hover:text-secondary transition-all"
             >Beranda</a
           >
           <a
             href="aboutus.html"
-            class="text-primary font-medium hover:text-secondary transition-all"
+            class="text-gray-600 hover:text-primary transition-all"
             >Tentang</a
           >
-          <a href="berita.html" class="text-gray-600 hover:text-primary transition-all"
+          <a
+            href="berita.html"
+            class="text-gray-600 hover:text-primary transition-all"
             >Berita</a
           >
         </div>
+
+        <!-- Mobile Menu Button -->
         <div class="md:hidden">
-          <i data-feather="menu"></i>
+          <button id="menu-btn" class="focus:outline-none">
+            <i data-feather="menu"></i>
+          </button>
         </div>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a
+          href="index.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+          >Beranda</a
+        >
+        <a
+          href="aboutus.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+          >Tentang</a
+        >
+        <a
+          href="berita.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary"
+          >Berita</a
+        >
       </div>
     </nav>
 
@@ -535,15 +562,12 @@
                 >
               </li>
               <li>
-                <a href="#" class="text-sm hover:text-white transition-all"
+                <a href="aboutus.html" class="text-sm hover:text-white transition-all"
                   >Tentang Kami</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm hover:text-white transition-all">Berita</a>
-              </li>
-              <li>
-                <a href="#" class="text-sm hover:text-white transition-all">Kontak</a>
+                <a href="berita.html" class="text-sm hover:text-white transition-all">Berita</a>
               </li>
             </ul>
           </div>
@@ -584,13 +608,16 @@
       </div>
     </footer>
 
-    <script>
-      feather.replace();
+   <!-- JS: Toggle mobile menu -->
+<script>
+  feather.replace();
 
-      // Mobile menu toggle functionality would go here
-      document.addEventListener("DOMContentLoaded", function () {
-        // Mobile menu toggle would be implemented here
-      });
-    </script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
   </body>
 </html>
